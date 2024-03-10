@@ -125,3 +125,6 @@ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 # Copy Picture to Pictures folder
 cp ./Pictures/* ~/Pictures
+
+# Install Vietnamese keyboard (ibus-unikey)
+sudo apt install ibus-unikey -y
