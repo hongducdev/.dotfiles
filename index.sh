@@ -38,6 +38,9 @@ sudo apt install python3 -y
 # Install programs
 sudo apt install neofetch bpytop cava cmatrix -y
 
+# Copy config neofetch to home directory
+cp ./neofetch/config.conf ~/.config/neofetch/config.conf
+
 # Install Google Chrome, Discord, Visual Studio Code and Spotify
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
