@@ -149,3 +149,11 @@ gsettings set org.gnome.desktop.interface monospace-font-name "RobotoMono Nerd F
 gsettings set org.gnome.desktop.interface document-font-name "Roboto Mono Regular 10"
 gsettings set org.gnome.desktop.interface font-name "Roboto Mono Regular 10"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Mono Bold 10"
+
+# Config panel
+gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface clock-show-week-numbers true
+gsettings set org.gnome.desktop.interface show-battery-time true
+gsettings set org.gnome.desktop.interface show-battery-percentage true
