@@ -36,21 +36,16 @@ cp .p10k.zsh ~/.p10k.zsh
 sudo apt install python3 -y
 
 # Install programs
-sudo apt install neofetch bpytop cava cmatrix -y
+sudo apt install neofetch bpytop cava cmatrix cbonsai -y
 
 # Copy config neofetch to home directory
 cp ./neofetch/config.conf ~/.config/neofetch/config.conf
 
-# Install Google Chrome, Discord, Visual Studio Code and Spotify
+# Install Google Chrome, Visual Studio Code and Spotify
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt install -f -y
 rm google-chrome-stable_current_amd64.deb
-
-wget https://dl.discordapp.net/apps/linux/0.0.41/discord-0.0.41.deb
-sudo dpkg -i discord-0.0.41.deb
-sudo apt install -f -y
-rm discord-0.0.41.deb
 
 sudo apt-get install wget gpg
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -64,6 +59,12 @@ sudo apt-get install code
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client
+
+# Install Cerebroapp
+wget https://github.com/cerebroapp/cerebro/releases/download/v0.11.0/cerebro_0.11.0_amd64.deb
+sudo dpkg -i cerebro_0.11.0_amd64.deb
+sudo apt install -f -y
+rm cerebro_0.11.0_amd64.deb
 
 # Install themes
 sudo apt install gtk2-engines-murrine
@@ -131,3 +132,20 @@ cp ./Pictures/* ~/Pictures
 
 # Install Vietnamese keyboard (ibus-unikey)
 sudo apt install ibus-unikey -y
+
+# Copy config cava to home directory
+cp ./cava/mocha.cava ~/.config/cava/config
+
+# Change wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:///$HOME/Pictures/fuyuno_artworks.png
+
+# Change theme
+gsettings set org.gnome.desktop.interface gtk-theme "Catppuccino-Mocha-BL"
+gsettings set org.gnome.desktop.interface icon-theme "ePapirus-Dark"
+gsettings set org.gnome.desktop.interface cursor-theme "Breeze_Snow"
+
+# Change font to Roboto Mono
+gsettings set org.gnome.desktop.interface monospace-font-name "RobotoMono Nerd Font Mono Regular 10"
+gsettings set org.gnome.desktop.interface document-font-name "Roboto Mono Regular 10"
+gsettings set org.gnome.desktop.interface font-name "Roboto Mono Regular 10"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Mono Bold 10"
