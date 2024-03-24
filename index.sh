@@ -86,7 +86,7 @@ if [ ! -d ~/.fonts ]; then
 fi
 
 # Copy Catppuccino theme
-cp -r Catppuccin-GTK-Theme/themes ~/.themes
+cp -r Catppuccin-GTK-Theme/themes/* ~/.themes
 
 # Install papirus-icon-theme
 sudo add-apt-repository ppa:papirus/papirus
@@ -103,7 +103,7 @@ sudo cp -r src/* /usr/share/icons/Papirus
 ./papirus-folders -C cat-mocha-green --theme Papirus-Dark
 
 # Install fonts
-sudo cp ./fonts/* ~/.fonts
+sudo cp ./.fonts/* ~/.fonts
 
 # Install Catppuccin Gnome terminal theme
 curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.2.0/install.py | python3 -
@@ -156,4 +156,3 @@ gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface clock-show-week-numbers true
 gsettings set org.gnome.desktop.interface show-battery-time true
-gsettings set org.gnome.desktop.interface show-battery-percentage true
