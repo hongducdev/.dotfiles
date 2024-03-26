@@ -127,6 +127,9 @@ sudo ~/patch-notion-enhanced.sh
 # Install NVM
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
+# Install Bun
+curl -fsSL https://bun.sh/install | bash
+
 # Copy Picture to Pictures folder
 cp ./Pictures/* ~/Pictures
 
