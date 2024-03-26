@@ -5,8 +5,7 @@
 sudo apt install git
 git clone git@github.com:hongducdev/.dotfiles.git
 ```
-
-e
+> or download .zip and extract. (Press Ctrl + H to show hidden files and folders)
 
 ## 2. Install the dotfiles
 
