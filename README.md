@@ -1,7 +1,7 @@
 ## 1. Clone the repository
 
 ```bash
-// if clone project by git
+# if clone project by git
 sudo apt install git
 git clone git@github.com:hongducdev/.dotfiles.git
 ```
