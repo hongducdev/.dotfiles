@@ -41,12 +41,7 @@ sudo apt install neofetch bpytop cava cmatrix cbonsai -y
 # Copy config neofetch to home directory
 cp ./neofetch/config.conf ~/.config/neofetch/config.conf
 
-# Install Google Chrome, Visual Studio Code and Spotify
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt install -f -y
-rm google-chrome-stable_current_amd64.deb
-
+# Install Visual Studio Code
 sudo apt-get install wget gpg
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -56,10 +51,6 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code
 
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client
-
 # Install Cerebroapp
 wget https://github.com/cerebroapp/cerebro/releases/download/v0.11.0/cerebro_0.11.0_amd64.deb
 sudo dpkg -i cerebro_0.11.0_amd64.deb
@@ -67,8 +58,8 @@ sudo apt install -f -y
 rm cerebro_0.11.0_amd64.deb
 
 # Install themes
-sudo apt install gtk2-engines-murrine
-git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
+wget https://github.com/catppuccin/gtk/releases/download/v0.7.3/Catppuccin-Latte-Standard-Green-Light.zip
+unzip Catppuccin-Latte-Standard-Green-Light.zip
 
 # Check .themes folder and create if not exists
 if [ ! -d ~/.themes ]; then
@@ -86,7 +77,7 @@ if [ ! -d ~/.fonts ]; then
 fi
 
 # Copy Catppuccino theme
-cp -r Catppuccin-GTK-Theme/themes/* ~/.themes
+cp -r ./Catppuccin-Latte-Standard-Green-Light/* ~/.themes
 
 # Install papirus-icon-theme
 sudo add-apt-repository ppa:papirus/papirus
@@ -100,7 +91,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 git clone https://github.com/catppuccin/papirus-folders.git
 cd papirus-folders
 sudo cp -r src/* /usr/share/icons/Papirus
-./papirus-folders -C cat-mocha-green --theme Papirus-Dark
+./papirus-folders -C cat-latte-green --theme Papirus-Light
 
 # Install fonts
 sudo cp ./.fonts/* ~/.fonts
@@ -135,27 +126,3 @@ cp ./Pictures/* ~/Pictures
 
 # Install Vietnamese keyboard (ibus-unikey)
 sudo apt install ibus-unikey -y
-
-# Copy config cava to home directory
-cp ./cava/mocha.cava ~/.config/cava/config
-
-# Change wallpaper
-gsettings set org.gnome.desktop.background picture-uri file:///$HOME/Pictures/fuyuno_artworks.png
-
-# Change theme
-gsettings set org.gnome.desktop.interface gtk-theme "Catppuccino-Mocha-BL"
-gsettings set org.gnome.desktop.interface icon-theme "ePapirus-Dark"
-gsettings set org.gnome.desktop.interface cursor-theme "Breeze_Snow"
-
-# Change font to Roboto Mono
-gsettings set org.gnome.desktop.interface monospace-font-name "RobotoMono Nerd Font Mono Regular 10"
-gsettings set org.gnome.desktop.interface document-font-name "Roboto Mono Regular 10"
-gsettings set org.gnome.desktop.interface font-name "Roboto Mono Regular 10"
-gsettings set org.gnome.desktop.wm.preferences titlebar-font "Roboto Mono Bold 10"
-
-# Config panel
-gsettings set org.gnome.desktop.interface clock-show-date true
-gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.desktop.interface clock-show-weekday true
-gsettings set org.gnome.desktop.interface clock-show-week-numbers true
-gsettings set org.gnome.desktop.interface show-battery-time true
